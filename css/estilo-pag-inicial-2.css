@@ -1,0 +1,261 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'calibri';
+    text-decoration: none;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* inicio de header */
+header{
+    background-color: rgb(186, 240, 222);
+    padding: 0px 1em;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    z-index: 2;
+    box-shadow: -1px 0px 10px 0px gray;
+}
+
+header .logo-menu{
+    height: 50%;
+}
+
+header > nav{
+    height: 100%;
+    width: 50%;
+}
+
+#botao-abrir-menu{
+    display: none;
+}
+
+#menu-lateral-index{
+    /* border: solid 1px; */
+    /* background-color: blue; */
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+    list-style: none; 
+}
+
+#menu-lateral-index li{
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+#menu-lateral-index a{
+    color: black;
+    height: 100%;
+    width: 50%;
+    text-wrap: nowrap;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    border-radius: 5px;
+} 
+
+#menu-lateral-index a:hover{
+    background-color:  rgb(163, 218, 199);
+}
+
+#botao-login-index{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    width: 5vh;
+    height: 5vh;
+    background-color: rgb(151, 189, 171);
+    border-radius: 5px;
+}
+
+/* fim do header */
+
+#box-principal{
+    padding-top: 10vh;
+    /* background-color: aqua; */
+    background-color: rgb(243, 242, 242); 
+    /* background:  url(img/fundo.png) 0.5; */
+    /* background-size: 30vh; */
+    /* opacity: 0.5; */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#box-menu-lateral{
+    height:90vh;
+    width: auto;
+    display: flex;
+    /* overflow: hidden; */
+} 
+
+#menu-lateral{
+    width: 15vw;
+    height: 100%;
+    box-shadow: 1px 0px 10px 0px gray;
+    background-color: rgb(195, 231, 214);
+    transition: 1s;
+    overflow: hidden;
+}
+
+/* #box-menu-lateral *{
+    border: 1px solid black;
+} */
+
+#botao-menu-area-trabalho{
+    width: 5vh;
+    height: 5vh;
+    margin: 1vh;
+    background-color:rgb(186, 240, 222);
+    border-radius: 5px;
+    border-width: 0px;
+    box-shadow: 1px 1px 10px 0px gray;
+}
+
+#botao-menu-mobile{
+    display: none;
+}
+
+.item-menu-lateral a{
+    border: solid black 1px;
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.item-menu-lateral{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-menu-lateral > img{
+    width: 3vw;
+    margin: 1vw;
+}
+
+#box-usuario-menu-lateral{
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 1px 10px 0px gray;
+    z-index: 1;
+}
+
+#box-usuario-menu-lateral > img{
+    width: 50%;
+}
+
+.item-menu-lateral:hover{
+    background-color: rgb(168, 211, 190);
+}
+ 
+.article-pag{
+    
+    margin: 1vh 1vh 0px 0px;
+    /* border: 1px solid black; */
+    padding: 1%;
+    flex-grow: 1;
+    width: 70%;
+    height: 98%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px 0px gray;
+    /* background-color: aqua; */
+}
+
+.oculto{
+    display: none;
+}
+
+
+@media (max-width: 480px){
+    
+
+    
+#botao-abrir-menu{
+    display: block;
+    border-width: 0px;
+    border-radius: 5px;
+    height: 6vh;
+    width: 6vh;
+   
+}
+
+    header > nav {
+        margin-left: -80%;
+        transition: 1s;
+        position: absolute;
+        top: 10vh;
+        left: 0vw;
+        height: 90vh;
+        width: 80%;
+        background-color: rgb(106, 207, 173);
+        
+    }
+
+    #menu-lateral-index{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #menu-lateral-index > *{
+        width: 100%;
+        height: 10%;
+        /* border: 1px black solid; */
+
+
+    }
+
+
+
+
+
+
+
+}
+
+.box-botao{
+    width: 100%;
+    display: flex;
+    /* justify-content: flex-end; */
+    /* align-items: center; */
+    /* padding: 1em; */
+    /* border: 1px black solid; */
+}
+
+.box-botao > button{
+    padding: 1em;
+}
+
+

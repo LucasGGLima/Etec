@@ -1,0 +1,127 @@
+<?php
+
+include 'conexao.php';
+include 'script.php';
+ 
+session_start();
+$nome = $_SESSION['nome'];
+$email = $_SESSION['email'];
+$id_usuario = $_SESSION['id_usuario'];
+
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/estilo-pag-inicial.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+<header>
+        <img src="img/logo.png" class="logo-menu">
+            <button id="botao-menu-mobile" onclick="moverMenu()">X</button>
+
+</header>
+<main id="box-principal">
+        <aside id="box-menu-lateral">
+            <ul id="menu-lateral">
+                <li  id="box-usuario-menu-lateral">
+                    <img src="img/conta.png" class="imagem">
+                     <p><?php echo $nome; ?></p> 
+                    
+                </li>
+                <li class="item-menu-lateral  pg-ativa">
+                    <img src="img/img-home.png" onclick="moverMenu()"  class="img-item-lateral">
+                    <a href="home.php">Home</a>
+                </li>
+                <li class="item-menu-lateral">
+                    <img src="img/icon-vaca-lateral.png" onclick="moverMenu()" class="img-item-lateral">
+                    <a href="animais-cadastrados.php">Animal</a>
+                </li>
+                <li class="item-menu-lateral">
+                    <img src="img/img-cad.png" onclick="moverMenu()" class="img-item-lateral">
+                    <a href="cadastrar-animal.php">Cadastrar</a>
+                </li>
+                <li class="item-menu-lateral">
+                    <img src="img/img-config.png" class="img-item-lateral">
+                    <a href="config.php">Configuraçoes</a>
+                </li>
+            </ul>
+            <button id="botao-menu-area-trabalho" onclick="moverMenu()">
+                <img src="img/seta-esquerda.png">
+            </button>
+
+        </aside>
+        <article class="article-pag" id="box-home">
+            <div id="box-avatar">
+                <img src="img/conta.png" title="Selecione um usuario" onclick="abrirSelect()" class="imagem">
+                <h2>Olá bem vindo de volta!</h2>
+                <div id="select-avatar">
+                    <img src="img/imgs/avatar01 (1).png" onclick="tradeimg(1)">
+                    <img src="img/imgs/avatar01 (2).png" onclick="tradeimg(2)">
+                    <img src="img/imgs/avatar01 (3).png" onclick="tradeimg(3)">
+                    <img src="img/imgs/avatar01 (4).png" onclick="tradeimg(4)">
+                    <img src="img/imgs/avatar01 (5).png" onclick="tradeimg(5)">
+                    <img src="img/imgs/avatar01 (6).png" onclick="tradeimg(6)">
+                    <img src="img/imgs/avatar01 (7).png" onclick="tradeimg(7)">
+                    <img src="img/imgs/avatar01 (8).png" onclick="tradeimg(8)">
+                </div>
+            </div>
+            <div id="box-item-home">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+            </div>
+        </article>
+</main>
+<script>
+
+const imgsAvatar = document.getElementsByClassName('imgs-avatar');
+  const boxSelect = document.getElementById('select-avatar');
+
+
+  function abrirSelect(){
+    boxSelect.style.width = "40%";
+    boxSelect.style.height = "40%";
+
+    // boxSelect.style.height = "30%";
+    boxSelect.style.padding = "2%";
+  }
+
+
+
+const arraylink = [];
+
+for(let i = 1; i <= 8; i++){
+    arraylink[i] = i;
+}
+
+
+    function tradeimg(position){
+let imagens = document.getElementsByClassName("imagem");
+
+for(img in imagens){
+    imagens[img].src = "img/imgs/avatar01 ("+ arraylink[position] +").png";
+}
+
+boxSelect.style.padding = "0%";
+
+    boxSelect.style.width = "0%";
+    boxSelect.style.height = "0%";
+
+}
+
+
+</script>
+<script src="script.js"></script>
+</body>
+
+</html>

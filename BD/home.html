@@ -1,0 +1,87 @@
+<?php
+
+include 'conexao.php';
+include 'script.php';
+ 
+session_start();
+$nome = $_SESSION['nome'];
+$email = $_SESSION['email'];
+$id_usuario = $_SESSION['id_usuario'];
+
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/estilo-pag-inicial.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+<header>
+        <img src="img/logo.png" class="logo-menu">
+            <button id="botao-menu-mobile" onclick="moverMenu()">X</button>
+
+</header>
+<main id="box-principal">
+        <aside id="box-menu-lateral">
+            <ul id="menu-lateral">
+                <li  id="box-usuario-menu-lateral">
+                    <img src="img/conta.png">
+                     <p><?php echo $nome; ?></p> 
+                    
+                </li>
+                <li class="item-menu-lateral  pg-ativa">
+                    <img src="img/img-home.png" onclick="moverMenu()"  class="img-item-lateral">
+                    <a href="home.php">Home</a>
+                </li>
+                <li class="item-menu-lateral">
+                    <img src="img/icon-vaca-lateral.png" onclick="moverMenu()" class="img-item-lateral">
+                    <a href="animais-cadastrados.php">Animal</a>
+                </li>
+                <li class="item-menu-lateral">
+                    <img src="img/img-cad.png" onclick="moverMenu()" class="img-item-lateral">
+                    <a href="cadastrar-animal.php">Cadastrar</a>
+                </li>
+                <li class="item-menu-lateral">
+                    <img src="img/img-config.png" class="img-item-lateral">
+                    <a href="config.html">Configurações</a>
+                </li>
+
+            </ul>
+            <button id="botao-menu-area-trabalho" onclick="moverMenu()">
+                <img src="img/seta-esquerda.png">
+            </button>
+
+        </aside>
+        <article class="article-pag">
+            <div class="content">
+                <h1>Bem Vindo, João! Hoje será um dia de sucesso </h1>
+                <h2> 22:21</h2>
+                <br>
+                <section class="info-section">
+                    <div class="info-block">
+                        <h2 class="info-title">Número de Animais Cadastrados</h2>
+                        <p class="animals-count"><span>4</span></p>
+                    </div>
+                    <div class="info-block">
+                        <h2 class="info-title">Status do Plano atual</h2>
+                        <p class="current-date"><span>Plus</span></p>
+                    </div>
+                    <div class="info-block">
+                        <h2 class="info-title">Dias Restantes para o Próximo Animal Mudar Status</h2>
+                        <p class="days-left"><span>15</span></p>
+                    </div>
+                </section>
+            </div>
+        </article>
+</main>
+<script src="script.js"></script>
+</body>
+
+</html>

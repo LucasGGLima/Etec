@@ -1,0 +1,114 @@
+<?php
+
+include 'conexao.php';
+include 'script.php';
+ 
+session_start();
+$nome = $_SESSION['nome'];
+$email = $_SESSION['email'];
+$id_usuario = $_SESSION['id_usuario'];
+
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/estilo-pag-inicial.css">
+    <title>Document</title>
+<style>
+#avatar{
+    width: 0px; height: 0px; overflow: hidden; border: 1px solid red; display : flex; justify-content: space-around; align-items: center;
+}
+
+
+
+</style>
+</head>
+
+<body>
+<header>
+        <img  src="img/logo.png" class="logo-menu">
+            <button id="botao-menu-mobile" onclick="moverMenu()">X</button>
+
+</header>
+<main id="box-principal">
+        <aside id="box-menu-lateral">
+            <ul id="menu-lateral">
+                <li  id="box-usuario-menu-lateral">
+                    <img src="img/conta.png" class="imagem">
+                     <p><?php echo $nome; ?></p> 
+                    
+                </li>
+                <li class="item-menu-lateral  pg-ativa">
+                    <img src="img/img-home.png" onclick="moverMenu()"  class="img-item-lateral">
+                    <a href="home.php">Home</a>
+                </li>
+                <li class="item-menu-lateral">
+                    <img src="img/icon-vaca-lateral.png" onclick="moverMenu()" class="img-item-lateral">
+                    <a href="animais-cadastrados.php">Animal</a>
+                </li>
+                <li class="item-menu-lateral">
+                    <img src="img/img-cad.png" onclick="moverMenu()" class="img-item-lateral">
+                    <a href="cadastrar-animal.php">Cadastrar</a>
+                </li>
+                <li class="item-menu-lateral">
+                    <img src="img/img-config.png" class="img-item-lateral">
+                    <a href="config.html">Configurações</a>
+                </li>
+
+            </ul>
+            <button id="botao-menu-area-trabalho" onclick="moverMenu()">
+                <img src="img/seta-esquerda.png">
+            </button>
+
+        </aside>
+        <article class="article-pag">
+            
+                <img class="imagem"src="img/conta.png" width="200em" height="200em" onclick="abriravatar()">
+                <div id="avatar">
+                <img onclick="tradeimg(0)" width="" height="80%" src="https://img.freepik.com/fotos-premium/renderizacao-3d-de-retrato-de-pessoa-idosa_1086710-9907.jpg?semt=ais_hybrid">
+                <img onclick="tradeimg(1)" width="" height="80%" src="https://img.freepik.com/fotos-premium/memoji-bela-avo-em-um-fundo-branco-emoji-personagem-de-desenho-animado_826801-7970.jpg?w=740">
+                <img onclick="tradeimg(2)" width="" height="80%" src="https://img.freepik.com/fotos-premium/graffiti-de-um-gato-usando-um-chapeu-de-bruxa-com-uma-estrela-generativa-ai_902846-129557.jpg">
+                <img onclick="tradeimg(3)" width="" height="80%" src="https://img.freepik.com/fotos-premium/um-personagem-de-desenho-animado-com-um-fundo-azul-que-diz-a-palavra-pixar-nele_81048-16403.jpg?w=740">
+                </div>
+                
+                <h1><?php echo "Bem Vindo, $nome Hoje será um dia de sucesso"?> </h1>
+                <h2> 22:21</h2>
+                <br>
+                <section class="info-section">
+                    <div class="info-block">
+                        <h2 class="info-title">Número de Animais Cadastrados</h2>
+                        <p class="animals-count"><span>4</span></p>
+                    </div>
+                    <div class="info-block">
+                        <h2 class="info-title">Status do Plano atual</h2>
+                        <p class="current-date"><span>Plus</span></p>
+                    </div>
+                    <div class="info-block">
+                        <h2 class="info-title">Dias Restantes para o Próximo Animal Mudar Status</h2>
+                        <p class="days-left"><span>15</span></p>
+                    </div>
+                </section>
+            
+        </article>
+</main>
+<script src="script.js"></script>
+</body>
+
+<script>
+
+function abriravatar(){
+    document.getElementById("avatar").style.width= "100%";
+    document.getElementById("avatar").style.height= "10em";
+}
+
+
+
+
+
+</script>
+</html>

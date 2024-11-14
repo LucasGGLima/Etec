@@ -1,0 +1,188 @@
+<!--<?php
+
+include 'conexao.php';
+include 'script.php';
+ 
+session_start();
+$nome = $_SESSION['nome'];
+$email = $_SESSION['email'];
+$id_usuario = $_SESSION['id_usuario'];
+
+?> -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo-pag-cad-animal.css">
+    <link rel="stylesheet" href="estilo-pag-inicial.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header onclick="inserirCampo()">
+        <img src="img/logo.png" class="logo-menu">
+        <button id="botao-menu-mobile" onclick="moverMenu()">X</button>
+
+    </header>
+    <main id="box-principal">
+        <aside id="box-menu-lateral">
+            <ul id="menu-lateral">
+                <li  id="box-usuario-menu-lateral">
+                    <img src="img/iconUsuario.png">
+                    <!-- <p><?php echo $nome; ?></p> -->
+                    <p>usuario</p>
+                </li>
+                <li class="item-menu-lateral">
+                    <img src="img/icon-vaca-lateral.png" onclick="window.location.replace('animais-cadastrados.html')" class="img-item-lateral">
+                    <a href="animais-cadastrados.html">animal</a>
+                </li>
+                <li class="item-menu-lateral"><img src="img/img-cad.png" class="img-item-lateral"><a href="cadastrosanimal.html">Cadastro</a></li>
+                <li class="item-menu-lateral"><img src="img/img-item-lateral.png" class="img-item-lateral"><a href="#">categoria</a></li>
+                <li class="item-menu-lateral"><img src="img/img-item-lateral.png" class="img-item-lateral"><a href="#">categoria</a></li>
+
+            </ul>
+            <button id="botao-menu-area-trabalho" onclick="moverMenu()">X</button>
+
+        </aside>
+        <article class="article-pag" id="pag-cad-animal">
+
+
+            <h1>Cadastro de animal</h1>
+            <form action="cadastroAnimal.php" method="post" id="form-inserir-animal">
+                
+                <div class="form-cad-animal box01-form-cad">
+                    
+
+
+                    <div class="box-item-cad"> 
+                        <label class="label-cad" for="nome_animal">nome</label>
+                        <input type="text" name="nome_animal" class="inputs-cad-animal" required id="nome_animal">
+                    </div>
+                    <div class="box-item-cad"> 
+                        <label class="label-cad" for="racas-de-vacas">especie</label>
+                        <select id="racas-de-vacas" name="especie" class="inputs-cad-animal">
+                            <option disabled selected>Selecionar espécie</option>
+                            <option value="holandesa">Holandesa (Holstein-Friesian)</option>
+                            <option value="jersey">Jersey</option>
+                            <option value="ayrshire">Ayrshire</option>
+                            <option value="guernsey">Guernsey</option>
+                            <option value="pardo-suico">Pardo Suíço (Brown Swiss)</option>
+                            <option value="gir-leiteira">Gir Leiteira</option>
+                            <option value="simental">Simental (Simmental Fleckvieh)</option>
+                            <option value="montbeliarde">Montbéliarde</option>
+                            <option value="girolando">Girolando</option>
+                            <option value="shorthorn-leiteiro">Shorthorn Leiteiro (Dairy Shorthorn)</option>
+                            <option value="normando">Normando</option>
+                            <option value="red-poll">Red Poll</option>
+                            <option value="frisia-vermelha-e-branca">Frísia Vermelha e Branca</option>
+                            <option value="milking-devon">Milking Devon</option>
+                            <option value="dexter">Dexter</option>
+                            <option value="kerry">Kerry</option>
+                            <option value="canadienne">Canadienne</option>
+                            <option value="illawarra">Illawarra</option>
+                            <option value="murnau-werdenfels">Murnau-Werdenfels</option>
+                            <option value="estoniana-vermelha">Estoniana Vermelha (Estonian Red)</option>
+                        </select>
+                    </div>
+                    <div class="box-item-cad"> 
+                        <label class="label-cad">Data de Nascimento</label>
+                        <input type="date" class="inputs-cad-animal">
+                    </div>
+                    <div class="box-item-cad"> 
+                        <label class="label-cad">Idade</label>
+                        <input type="number" class="inputs-cad-animal">
+                    </div>
+                    <div class="box-item-cad"> 
+                        <label class="label-cad">Peso</label>
+                        <input type="text" class="inputs-cad-animal">
+                    </div>
+
+
+
+
+
+                </div>
+                <div class="form-cad-animal box02-form-cad">
+                    <div class="box-item-cad">
+                        <label class="label-cad" onclick="infoLabel(0)">Código do animal ?</label>
+                        <div class="label-info">Se você não sabe imagina eu...</div>
+                        <input type="text" class="inputs-cad-animal">
+                    </div>
+
+                    <div class="box-item-cad">
+                        <label class="label-cad" onclick="infoLabel(2)">Status do animal ?</label>
+                        <div class="label-info" >O animal não quer declarar</div>
+                        <select class="inputs-cad-animal" id="selectStatus">
+                            <option disabled selected value="4" >selecionar Status</option>
+                            <option value="3" class="optionsStaus">Em transição</option>
+                            <option value="1" class="optionsStaus">Em gestação</option>
+                            <option value="2" class="optionsStaus">Em lactação</option>
+                        </select>
+                    </div>
+                    <div class="box-botao botao-cad-animal box-item-cad">
+                        <button>cadastrar</button>
+                    </div>
+
+                </div>
+
+                <!-- <div class="testForm black"></div> -->
+                <!-- <div class="testForm pink"></div>
+                    <div class="testForm black"></div> -->
+                <!-- <div class="testForm aqua"></div> -->
+            </form>
+
+
+            <!--<table>
+
+                     <?php
+
+try{
+    $sqlSelect = "SELECT * FROM vaca WHERE id_usuario = ? ORDER BY id_vaca DESC";
+
+    $stm = $con ->prepare($sqlSelect); 
+    $stm ->bindParam(1, $id_usuario);    
+    
+    $stm->execute();
+
+    $res = $stm->fetchAll();
+
+    // echo print_r($res);
+
+    foreach($res as $rows){
+        if($rows['nome_animal'] == "adrian"){
+            echo "<tr><td>É amigo, amigo mais quatro meses de escola...</td></tr>";
+        } else{
+
+       echo "<tr>
+             <td> " . $rows['nome_animal'] . "</td>
+             <td> " .  $rows['especie'] . " </td>
+             <td> " .  $rows['id_vaca'] . " </td>
+             </tr>";
+        }
+
+    }
+
+}catch(PDOException$erro){
+            
+    echo "Erro: ". $erro ->getMessage();
+
+}
+
+
+                    
+                  
+
+                    ?>
+                     
+                
+                    </table>-->
+
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

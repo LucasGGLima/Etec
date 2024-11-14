@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> BoiLab</title>
+    <link rel="stylesheet" href="css/estilo-pag-inicial-2.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="shortcut icon" href="img/icon-aba.png" type="image/x-icon">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="img/logo.png" class="logo-menu">
+
+        <nav>
+            <ul id="menu-lateral-index">
+                <li><a href="#box-slider">Home</a></li>
+                <li><a href="#galeria">Serviços</a></li>
+                <li><a href="#sobre-nos">Sobre nós</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#box-contatos">Contatos</a></li>
+            </ul>
+        </nav>
+        <a href="login.php" id="botao-login-index">logar</a>
+        <button id="botao-abrir-menu" onclick="moverMenu()">X</button>
+    </header>
+
+    <div id="box-slider">
+        <div id="box-scroll">
+
+            <!-- <img class="slides" id="slide01" src="img/imgs/img 13.jpg">-->
+            <div class="slides" id="slide01">
+                <img src="img/imgs/img 13.jpg">
+                <h2>A <br> gestão <br> pecuária <br> que  <br>você <br> busca</h2>
+            </div>
+            <div class="slides pink">
+                <img class="slides" src="img/imgs/img 11.jpg">
+                <h2>Um <br> sistema  <br> pensado <br> em <br> você</h2>
+            </div>
+            <div class="slides">
+                <img class="slides" src="img/imgs/img 6.jpg">
+                <h2> Mais <br> produtividade <br> para <br> você <br> e <br> animal </h2>
+            </div>
+            <div class="slides">
+                <img class="slides" src="img/imgs/img 16.jpg">
+                <h2> </h2>
+            </div>
+        </div>
+        <nav id="menu-slider">
+            <input type="radio" name="btns" class="btns" onchange="slider()">
+            <input type="radio" name="btns" class="btns" onchange="slider()">
+            <input type="radio" name="btns" class="btns" onchange="slider()">
+            <input type="radio" name="btns" class="btns" onchange="slider()">
+        </nav>
+    </div>
+
+    <div class="boxs-infos" id="sobre-nos">
+        <img src="img/Computadorboilab.png">
+
+        <h2> A gestão pecuária que você busca com a facilidade que você precisa.
+            <p class="text-infos">
+                O BoiLab é uma plataforma de gerenciamento pecuário gratuita,
+                que tem como principal objetivo maximizar o ciclo produtivo
+                dos animais de seus usuários.
+
+            </p>
+        </h2>
+
+    </div>
+
+    <div id="galeria">
+
+        <div class="item-galeria">
+        <div>
+                <img src="img/img-galeria-01.png">
+                <p class="text-item-galeria">
+                    Acesse o BoiLab por qualquer dispositivo e tenha em suas
+                    mãos uma plataforma de gerenciamento agropecuário.
+                    Com layouts totalmentes responsivos para te atender em
+                    qualquer tela.
+                </p>
+            
+        </div>
+        </div>
+        <div class="item-galeria">
+            <div>
+                <img src="img/selling.png">
+                <p class="text-item-galeria">
+                    Aumente a eficiencia de sua produção por meio do BoiLab,
+                    com um sistema de gerenciamento simples e gratuito, que,
+                    consequentimente tambem aumenta seus lucros
+                </p>
+            </div>
+        </div>
+        <div class="item-galeria">
+            <div>
+                <img src="img/icon-vaca-lateral.png">
+                <p class="text-item-galeria">
+                    Pensado para manter a qualidade de vida dos animais
+                    e também maximizar sua produção. Um sistema completo
+                    e com consciência ambiental.
+                </p>
+            </div>
+        </div>
+        <div class="item-galeria">
+            <div>
+                <img src="img/img-item-galery-04.png">
+                <p class="text-item-galeria">
+                    Com uma conta premium você não tem limitação de registros,
+                    assim garantindo que todos os seus animais possam alcançar
+                    o seu máximo.
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="boxs-infos">
+        <h2>
+            Um sistema pensado, projetado e criado para quem precisa
+            <p class="text-infos">
+                Contando com um sistema integrado a um banco de dados em tempo real,
+                o sistema gera um calendario próprio para cada animal, assim o usuário
+                tem acesso a uma agenda interativa.
+            </p>
+
+        </h2>
+
+
+        <img src="img/img-info-01.webp">
+
+
+
+    </div>
+
+    <footer id="box-contatos">
+        <div class="infos-footer footer-parceria">
+            <img src="img/logo.png" class="logo-footer">
+            <h2>Parcerias</h2>
+            <img src="img/parceria.png" alt="">
+        </div>
+        <div class="infos-footer">
+            &#x24B8; Copyright <span id="ano"></span>
+        </div>
+        <div class="infos-footer footer-contatos">
+            <h3>Contatos</h3>
+            <div>
+                <img src="img/instagram.png">
+                <img src="img/whatsapp.png">
+                <img src="img/envelope.png">
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

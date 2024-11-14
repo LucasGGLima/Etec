@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body class="body-center">
+    <form action="cadastroEmail.php" method="POST" class="box-principal-cadastro">
+        <div class="box-justify-y ele-cadastro">
+            <img src="img/logo.png" class="logo-cadastro">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" onmouseout="verificar(nome)">
+            <label for="sobrenome">sobrenome</label>
+            <input type="text" name="sobrenome">
+            <label for="sexo">Sexo</label>
+            <select name="sexo" id="">
+                <option value="selecionar" disabled>selecionar</option>
+                <option value="masculino">masculino</option>
+                <option value="feminino">feminino</option>
+                <option value="outro">outro</option>
+            </select>
+            <label for="data_nasc">Data de Nascimento</label>
+            <input type="date" name="data_nasc">
+            <label for="tel">telefone</label>
+            <input type="tel" name="tel">
+        </div>
+        <div class="box-ele-right">
+            <button type="submit" class="buttons">Avançar</button>
+        </div>
+    </form>
+</body>
+</html>

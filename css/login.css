@@ -1,0 +1,254 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'calibri';
+    color: gray;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(245, 250, 248);
+}
+
+main{
+    width: 60%;
+    height: 60%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 1px gray;
+    flex-wrap: wrap;
+
+}
+
+.box-boilab{
+    width: 50%;
+    background-color: rgb(186, 240, 222);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: 1s;
+}
+
+.box-boilab >*{
+width: 90%;
+    /* border: 1px solid black; */
+}
+
+.box-boilab > p {
+    font-size: 120%;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+/* border: 1px black solid; */
+}
+
+#erro-login{
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    /* border: solid 1px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transition: 1s;
+ }
+
+#erro-login > img{
+    height: 50%;
+}
+
+#erro-login > p{
+    font-size: 200%;
+    text-wrap: nowrap;
+}
+
+/* labels e inputs */
+
+.box-inputs{
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+.input-login{
+    height: 50%;
+    width: 100%; 
+    display: inline-block;
+    padding: 0px 2%;
+    font-size: 120%;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+}
+
+.input-login:hover{
+    border: 2px solid rgb(137, 177, 164);
+}
+
+.input-login:focus{
+    border: 2px solid rgb(137, 177, 164);
+}
+
+form > h2{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    font-size: 200%;
+    color:rgb(137, 177, 164);
+    
+}
+
+label{
+    height: 50%;
+    /* color: aqua; */
+    /* border: 1px solid black; */
+    font-size: 120%;
+    display: flex;
+    align-items: center;
+
+}
+
+/* botoes de login e cadastro */
+
+.box-botoes{
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    padding:  0px 5%;
+    align-items: flex-start;
+}
+
+.box-botoes > a {
+    padding:  2% 3%;
+    text-decoration: none;
+    color: rgb(137, 177, 164);
+    border-radius: 5px;
+    transition: 0.5s;
+    border: 1px solid rgb(137, 177, 164);
+}
+
+.box-botoes > a:hover{
+    background-color: rgb(137, 177, 164);
+    color: white;
+}
+
+.botoes{
+    background-color: rgb(137, 177, 164);
+    border-radius: 5px;
+    padding: 2% 3%;
+    border: 1px white solid;
+    color: white;
+    font-size: 120%;
+    transition: 0.5s;
+}
+
+.botoes:hover{
+    background-color: white;
+    color:rgb(137, 177, 164);
+    border: 1px solid rgb(137, 177, 164);
+}
+
+/* menssagem de erro */
+
+@media (max-width: 480px){
+
+    main{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        border-radius: 0px;
+        /* box-shadow: 0px 0px 10px 1px gray; */
+        flex-wrap: wrap;
+    
+    }
+
+    .box-boilab{
+        width: 100%;
+        height: 10%;
+        background-color: rgb(186, 240, 222);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        transition: 1s;
+        box-shadow: 0px 1px 10px 0px gray;
+        z-index: 1;
+    }
+
+    .box-boilab > img{
+        height: 100%;
+        width: auto;
+    }
+
+    .box-boilab > p{
+        display: none;
+    }
+
+
+    form{
+        /* justify-content: center; */
+        transition: 1s;
+        width: 100%;
+        height: 90%;
+        background-color: white;
+        /* border: 1px black solid; */
+    }
+
+    /* form > * {
+        border: 1px black solid;
+    } */
+
+    form > h2{
+        height: 10%;
+        text-align: center;
+        margin-top: 0%;
+        padding-top: 2%;
+        font-size: 200%;
+        color:rgb(137, 177, 164);
+        /* border: 1px black solid; */
+        
+    }
+    
+
+    #erro-login{
+        width: 10%;
+        height: 0%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        transition: 1s;
+    }
+
+    .box-inputs{
+        width: 100%; 
+        display: flex;
+        flex-direction: column;
+        height: 20%;
+        justify-content: space-between;
+        padding: 5%;
+    }
+
+}

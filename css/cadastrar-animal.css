@@ -1,0 +1,197 @@
+#pag-cad-animal{
+    display: flex;
+    flex-direction: column;
+}
+
+#form-inserir-animal{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    
+}
+
+.form-cad-animal{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1%;
+    height: 100%;
+    
+}
+
+
+.box-item-cad{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 20%;
+}
+
+.label-cad{
+    display: inline-block;
+    margin: 1% 0px;
+    width: 100%;
+}
+
+
+.inputs-cad-animal{
+    outline: none;
+    display: block;
+    width: 100%;
+    height: 30%;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 1%;
+}
+
+.inputs-cad-animal:hover, .inputs-cad-animal:focus{
+    border: 2px solid rgb(137, 177, 164);
+}
+
+.label-info{
+    transition: 0.5s;
+    background-color: rgb(217, 226, 217); 
+    width: 100%;
+    height: 0%;
+    border-radius: 5px;
+    overflow: hidden;
+    
+}
+
+.item-data-01,  .item-data-02{
+    border: 1px solid gray;
+    padding: 1%;
+    background-color: rgb(238, 238, 238);
+    transition: 0.5s;
+}
+
+.item-data-01{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-width: 0px;
+    /* border-start-start-radius: 10px; */
+}
+
+.item-data-01 p, .item-data-02 p{
+    border: solid 1px gray;
+    text-align: center;
+    width: 10%;
+    background-color: rgb(238, 238, 238);
+    z-index: 2;
+    margin: auto;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.item-data-01 p:hover, .item-data-02 p:hover{
+    background-color: rgb(206, 221, 221);
+}
+
+
+
+
+.item-data-01 p{
+    bottom: -45%;
+}
+
+.item-data-02 p{
+    display: none;
+}
+
+.item-data-02{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-width: 0px;
+
+    /* border-start-start-radius: 10px; */
+}
+
+/* div:hover ~ .item-data-01, div:hover ~ .item-data-02{
+    opacity: 0;
+}
+
+ */
+
+
+
+
+
+
+.box01-form-cad{
+    
+    border-right: 1px solid gray;
+}
+
+.botao-cad-animal{
+    justify-content: flex-end;
+    padding: 0px;
+    /* border: 1px solid gray; */
+    align-items: flex-start;
+
+}
+
+.botao-cad-animal button{
+    width: 15%;
+    height: 40%;
+    margin-top: 5%;
+    border-radius: 5px;
+    background-color: rgb(159, 228, 186);
+    border-width: 0px;
+    box-shadow: 5px 5px 10px 0px gray;
+}
+
+
+
+/* .red{
+    background-color: red;
+}
+
+.aqua{
+    background-color: aqua;
+}
+
+.black{
+    background-color: black;
+}
+
+.pink{
+    background-color: pink;
+} */
+
+
+
+@media (max-width: 480px){
+
+    .inputs-cad-animal{
+        display: block;
+        width: 100%;
+        height: 40%;
+        border-radius: 5px;
+    
+    }
+
+    #form-inserir-animal{
+        display: block;
+    }
+
+    #form-inserir-animal> div{
+        width: 100%;
+    }
+
+    #pag-cad-animal{
+        overflow: scroll;
+
+    }
+
+  
+    
+    .box01-form-cad{
+        height: 90vh;
+        border-right: none;
+        border-bottom: 1px solid gray;
+    }
+
+
+}
